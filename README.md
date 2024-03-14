@@ -12,6 +12,7 @@ Through this workshop, participants will gain hands-on experience with the Sui b
 
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
+- [Methods](#methods)
 
 ## Prerequisites
 
