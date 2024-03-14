@@ -11,11 +11,7 @@ Through this workshop, participants will gain hands-on experience with the Sui b
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Setting Up the Project](#setup)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [Usage](#usage)
 
 ## Prerequisites
 
@@ -27,7 +23,7 @@ Ensure you have the following installed:
 
 - **Git**: Version control system to clone the repository. Install from [git-scm.com](https://git-scm.com/) if it's not already available on your system.
 
-### Setting Up the Project
+### Usage
 
 1. **Clone the Repository**: Obtain a copy of the source code on your local machine.
 
