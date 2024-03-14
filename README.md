@@ -64,3 +64,38 @@ Ensure you have the following installed:
    ```bash
    node script.js <METHOD_NAME>
    ```
+
+## Methods
+
+The Sui Voting System contract provides a set of callable methods to interact with the polling system on the Sui blockchain. Below are the primary methods and their descriptions:
+
+### `createPoll`
+
+- **Description**: This method allows a user to create a new poll with a specified question and a list of options.
+- **Parameters**:
+  - `question`: A `String` representing the poll's question.
+  - `options`: A `vector<String>` representing the different choices available in the poll.
+
+### `registerVote`
+
+- **Description**: Cast a vote in an active poll and receive an "I voted" NFT as a reward.
+
+- **Parameters**:
+  - `poll`: A reference to the active `Poll` object.
+  - `option`: A `u64` index of the selected option from the poll.
+  - `name`: A `String` representing the voter's identity. (would be an wallet address, but for workshop simplicity we left this as a name string)
+
+### `changePollStatus`
+
+- **Description**: Change the active status of a poll to either open or close it to further voting.
+
+- **Parameters**:
+  - `poll`: A mutable reference to the `Poll` object.
+  - `status`: A `bool` flag representing the desired status (`true` for open, `false` for closed).
+
+### `getPollVotes`
+
+- **Description**: Retrieve the current tally of votes for each option in a poll. (only for devInspect or dryRun through script)
+
+- **Parameters**:
+  - `poll`: A mutable reference to the `Poll` object.
