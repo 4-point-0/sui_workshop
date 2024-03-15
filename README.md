@@ -2,11 +2,11 @@
 
 # Sui Voting System Workshop
 
-This workshop is centered around a robust Move contract, designed to facilitate a comprehensive voting system on the Sui blockchain. Accompanying the contract is a versatile script enabling the execution of on-chain methods, providing insights into the capabilities of dryRun and devInspect functionalities.
+This workshop is centered around a Move contract, designed to facilitate a voting system on the Sui blockchain. Accompanying the contract is a script enabling the execution of on-chain methods.
 
-The contract serves as a foundation to explore various key concepts of blockchain development within the Sui ecosystem, such as object ownership, Table data structures, error handling, and NFT (Non-Fungible Token) lifecycle, including creation and display mechanisms. The workshop is meticulously crafted to provide a holistic educational experience, bridging the gap between theoretical knowledge and practical application in blockchain technology.
+The contract serves as a foundation to explore various key concepts of blockchain development within the Sui ecosystem, such as object ownership, Table data structures, error handling, and NFT (Non-Fungible Token) lifecycle, including creation and display mechanisms. The workshop is crafted to provide a educational experience, bridging the gap between theoretical knowledge and practical application in blockchain technology.
 
-Through this workshop, participants will gain hands-on experience with the Sui blockchain's unique features, empowering them with the skills to build decentralized applications (dApps) that harness the full potential of Move's resource-oriented programming model and Sui's high-performance infrastructure.
+Through this workshop, participants will gain hands-on experience with the Sui blockchain's unique features, empowering them with the skills to build decentralized applications (dApps).
 
 ## Table of Contents
 
