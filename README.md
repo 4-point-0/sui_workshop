@@ -62,6 +62,8 @@ Ensure you have the following installed:
 
    2. Call a method via the script
 
+   GO AND CHANGE THE ADDRESSES AND MNEMONICS IN THE SCRIPT SO YOUR WALLET IS SIGNING THE MESSAGE AND YOU'RE CALING YOUR CONTRACT METHOD
+
    ```bash
    node script.js <METHOD_NAME>
    ```

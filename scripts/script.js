@@ -8,9 +8,11 @@ class ContractInteractions {
   constructor() {
     const rpcUrl = getFullnodeUrl("devnet");
     this.suiClient = new SuiClient({ url: rpcUrl });
+    //Change MNEMONICS here
     this.keyPair = Ed25519Keypair.deriveKeypair(
       "hurt code dawn post true chronic holiday equal calm notable adapt chair"
     );
+    //Change CONTRACT ADDRESS here
     this.contractId = "0xe38188bd24c8c327d671cac5843f272cb86e84c89b42a973dec01518142471a5";
   }
 
@@ -29,6 +31,7 @@ class ContractInteractions {
       arguments: [
         txb.pure.string("question"),
         txb.pure(stringListBytes),
+        //change POLLCOLLECTION ADDRESS here
         txb.object("0x1f64c595f781450fbd5e91af60a141d20a0b8a66b6421c0b1328ed0afe367e7e"),
       ],
     });
@@ -56,6 +59,7 @@ class ContractInteractions {
 
     //devInspect example
     const inspectResult = await this.suiClient.devInspectTransactionBlock({
+        //CHANGE THIS TO YOUR ADDRESS
         sender: '0x6ecfd8cbe297b68c48ae2fe3bb8e47577ec84313a55f0b1787b54cfd23a56059',
         transactionBlock: txb,
       });
@@ -82,6 +86,7 @@ class ContractInteractions {
     await txb.moveCall({
         target: `${this.contractId}::voting::registerVote`,
         arguments: [
+          //CHANGE THIS TO YOUR POLL ADDRESS
           txb.object("0x13ccbd7e9eaf2a2a836c3971757fc02d44f3eddd66db373cfb6939c5829ce878"),
           txb.pure.u64(0),
           txb.pure.string("Johnny"),
@@ -102,6 +107,7 @@ class ContractInteractions {
     await txb.moveCall({
         target: `${this.contractId}::voting::changePollStatus`,
         arguments: [
+          //CHANGE THIS ADDRESS TO YOUR POLL ADDRESS
           txb.object("0x13ccbd7e9eaf2a2a836c3971757fc02d44f3eddd66db373cfb6939c5829ce878"),
           txb.pure.bool(true)
         ],
@@ -120,6 +126,7 @@ class ContractInteractions {
     await txb.moveCall({
         target: `${this.contractId}::voting::getPollVotes`,
         arguments: [
+          //CHANGE THIS TO YOUR POLL ADDRESS
           txb.object("0x13ccbd7e9eaf2a2a836c3971757fc02d44f3eddd66db373cfb6939c5829ce878")
         ],
       });
@@ -133,6 +140,7 @@ class ContractInteractions {
 
     //devInspect example
     const inspectResult = await this.suiClient.devInspectTransactionBlock({
+        //CHANGE THIS TO YOUR SENDER ADDRESS
         sender: '0x66d118fa67e40562ad088c43771e0cb2d34f252fbbec939f2688c5d62b1f87e7',
         transactionBlock: txb,
     });
