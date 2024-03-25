@@ -88,9 +88,9 @@ module workshop_voting::voting {
     public entry fun createPoll(question: String, options: vector<String>, poll_collection_obj: &mut PollCollection,ctx: &mut TxContext):bool{
         // Check if options vector is not empty
         if (vector::length(&options) == 0) {
-            abort(MISSING_OPTION);
-        }
-
+            abort(MISSING_OPTION)
+        };
+        
         // Initialize vote counters for each option.
         let options_len = vector::length(&options);
         let vote_counts = vector::empty<u64>();
@@ -129,8 +129,8 @@ module workshop_voting::voting {
         };
         // Check if option is valid
         if (option >= vector::length(&poll.options)) {
-            abort(VALID_OPTION);
-        }
+            abort(VALID_OPTION)
+        };
 
          // Record the new vote and update the corresponding vote count.
         table::add(&mut poll.votes, name, option);
