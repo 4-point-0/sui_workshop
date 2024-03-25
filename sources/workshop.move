@@ -19,6 +19,10 @@ module workshop_voting::voting {
     const EALREADY_VOTED: u64 = 1;
     // An error code indicating that the poll was closed
     const EPOLL_CLOSED: u64 = 2;
+    // An error code indicating that the options vector is empty
+    const MISSING_OPTION: u64 = 3;
+    // An error code indicating that the option is invalid 
+    const VALID_OPTION: u64 = 3;
 
     // A struct representing a single poll, containing its details and voting data.
     struct Poll has key{
@@ -82,6 +86,11 @@ module workshop_voting::voting {
 
     // Creates a new poll with specified details and adds it to a poll collection.
     public entry fun createPoll(question: String, options: vector<String>, poll_collection_obj: &mut PollCollection,ctx: &mut TxContext):bool{
+        // Check if options vector is not empty
+        if (vector::length(&options) == 0) {
+            abort(MISSING_OPTION); // Arbitrary error code
+        }
+
         // Initialize vote counters for each option.
         let options_len = vector::length(&options);
         let vote_counts = vector::empty<u64>();
@@ -118,6 +127,10 @@ module workshop_voting::voting {
         if (!poll.isActive){
             abort(EPOLL_CLOSED)
         };
+        // Check if option is valid
+        if (option >= vector::length(&poll.options)) {
+            abort(VALID_OPTION); // Arbitrary error code
+        }
 
          // Record the new vote and update the corresponding vote count.
         table::add(&mut poll.votes, name, option);
