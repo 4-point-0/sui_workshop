@@ -39,7 +39,7 @@ module workshop_voting::voting {
     struct NFT has key, store{
         id: UID,
         name: String,
-        descripton: String,
+        description: String,
         image_url: String
     }
 
@@ -129,7 +129,7 @@ module workshop_voting::voting {
         let nft = NFT {
             id: object::new(ctx),
             name: utf8(NAME),
-            descripton: utf8(DESCRIPTION),
+            description: utf8(DESCRIPTION),
             image_url:utf8(URL)
         };
         transfer::transfer(nft, tx_context::sender(ctx));
