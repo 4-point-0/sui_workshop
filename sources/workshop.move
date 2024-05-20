@@ -111,13 +111,9 @@ module workshop_voting::voting {
     // Records a vote for a specific option in a poll, ensuring each voter can only vote once.
     public entry fun registerVote(poll: &mut Poll, option:u64, name:String, ctx: &mut TxContext){
         // Check if the voter has already voted and abort if so.
-        if (table::contains(&poll.votes, name)) {
-            abort(EALREADY_VOTED)
-        };
+        assert!(table::contains(&poll.votes, name), EALREADY_VOTED);
         // Check if poll is active and abort if not.
-        if (!poll.isActive){
-            abort(EPOLL_CLOSED)
-        };
+        assert!(!poll.isActive, EPOLL_CLOSED);
 
          // Record the new vote and update the corresponding vote count.
         table::add(&mut poll.votes, name, option);
